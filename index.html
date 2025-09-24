@@ -17,6 +17,11 @@
             <div class="nav-brand">
                 <span class="initials">H & S</span>
             </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="#story" class="nav-link">Our Story</a></li>
                 <li><a href="#wedding" class="nav-link">The Wedding</a></li>
@@ -316,12 +321,55 @@
                 label.style.background = '#F0F8F0';
                 label.style.borderColor = '#4CAF50';
                 
-                // Keep emoji hidden by default, only show on hover
+                // Show emoji feedback immediately on mobile
                 const emoji = label.querySelector('.emoji-feedback');
-                emoji.style.opacity = '0';
-                emoji.style.transform = 'translateY(-50%) scale(0.5)';
+                emoji.style.opacity = '1';
+                emoji.style.transform = 'translateY(-50%) scale(1.2)';
+                
+                // Add haptic feedback on mobile devices
+                if ('vibrate' in navigator) {
+                    navigator.vibrate(50); // Short vibration
+                }
             });
         });
+
+        // Add touch feedback for mobile devices
+        document.querySelectorAll('.radio-label').forEach(label => {
+            label.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.98)';
+            });
+            
+            label.addEventListener('touchend', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+
+        // Mobile menu toggle functionality
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (mobileMenuToggle && navLinks) {
+            mobileMenuToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+            
+            // Close menu when clicking on a nav link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenuToggle.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!mobileMenuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+                    mobileMenuToggle.classList.remove('active');
+                    navLinks.classList.remove('active');
+                }
+            });
+        }
     </script>
 </body>
 </html>
