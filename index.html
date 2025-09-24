@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandra & Harmon - Wedding</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Google Forms Integration -->
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="navbar" aria-label="Primary">
+            <div class="nav-brand">
+                <span class="initials">S & H</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#story" class="nav-link">Our Story</a></li>
+                <li><a href="#wedding" class="nav-link">The Wedding</a></li>
+                <li><a href="#rsvp" class="nav-link">RSVP</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home" aria-label="Home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Sandra & Harmon</h1>
+            <h2 class="hero-subtitle">ARE GETTING MARRIED</h2>
+            <div class="hero-details">
+                <p class="hero-date">JANUARY 28, 2026</p>
+                <p class="hero-location">2:00 PM CEREMONY</p>
+                <p class="hero-location">CABUYAO CITY, PHILIPPINES</p>
+            </div>
+            
+            <!-- Countdown Clock -->
+            <div class="countdown-container">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">000</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">00</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">00</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">00</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section id="story" class="story-section reveal" aria-label="Our Story">
+        <div class="container">
+            <h2 class="section-title">Our Story</h2>
+            <div class="story-content">
+                <div class="story-image">
+                    <img src="images/sands.jpg" alt="Sandra and Harmon" class="story-photo">
+                </div>
+                <div class="story-text">
+                    <p>Our love story began in the most unexpected way...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Wedding Section -->
+    <section id="wedding" class="wedding-section">
+        <div class="container">
+            <h2 class="section-title">The Wedding</h2>
+            <div class="wedding-events">
+                <!-- Ceremony -->
+                <div class="event-card ceremony">
+                    <div class="event-card-content">
+                        <h3 class="event-title">The Ceremony</h3>
+                        <div class="event-details">
+                            <p class="event-time"><strong>Time:</strong> 2:00 PM</p>
+                            <p class="event-location"><strong>Location:</strong> Montecito, Nuvali</p>
+                            <p class="event-address">Cabuyao City, Philippines</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reception -->
+                <div class="event-card reception">
+                    <div class="event-card-content">
+                        <h3 class="event-title">The Reception</h3>
+                        <div class="event-details">
+                            <p class="event-time"><strong>Time:</strong> After Ceremony</p>
+                            <p class="event-location"><strong>Location:</strong> Lakehall, Nena's Sanctuary</p>
+                            <p class="event-address">Sta. Elena, Cabuyao City, Philippines</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section id="rsvp" class="rsvp-section reveal" aria-label="RSVP">
+        <div class="container">
+            <h2 class="section-title">Kindly Respond By September 1st</h2>
+            <form class="rsvp-form" id="rsvp-form" action="https://docs.google.com/forms/d/e/1FAIpQLSen6cQc5eLPjLnEKOaLcztdfaStOCr_5bTKlixXAkNNs27xBg/formResponse" method="POST" target="_blank">
+                <div class="form-group">
+                    <label for="name">First & Last Name</label>
+                    <input type="text" id="name" name="entry.671845706" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="entry.2055545111" required>
+                </div>
+                <div class="form-group">
+                    <label for="guests">Number of Guests</label>
+                    <select id="guests" name="entry.1893890701" required>
+                        <option value="">Select number of guests</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="form-group attendance-question">
+                    <label>Will you be attending?</label>
+                    <div class="radio-group">
+                        <label class="radio-label" data-emoji="😊">
+                            <input type="radio" name="entry.1485655847" value="YES" required>
+                            <span class="radio-custom"></span>
+                            <span class="radio-text">Will Attend</span>
+                            <span class="emoji-feedback">😊</span>
+                        </label>
+                        <label class="radio-label" data-emoji="😢">
+                            <input type="radio" name="entry.1485655847" value="NO" required>
+                            <span class="radio-custom"></span>
+                            <span class="radio-text">Regretfully Declines</span>
+                            <span class="emoji-feedback">😢</span>
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn submit-btn">
+                    <span class="btn-text">Submit RSVP</span>
+                    <span class="btn-emoji">💌</span>
+                </button>
+                <p class="form-success" aria-live="polite" hidden>
+                    <span class="success-emoji">🎉</span>
+                    Thank you for your response! We look forward to celebrating with you.
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Registry Section -->
+    <section id="registry" class="registry-section">
+        <div class="container">
+            <!-- Any registry content here -->
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section reveal" aria-label="Photo Gallery">
+        <div class="container">
+            <h2 class="section-title">Photo Gallery</h2>
+            <div class="gallery-grid">
+                <figure class="gallery-item"><img src="images/gallery-1.jpg" alt="Sandra and Harmon" /></figure>
+                <figure class="gallery-item"><img src="images/gallery-2.jpg" alt="Moments together" /></figure>
+                <figure class="gallery-item"><img src="images/gallery-3.jpg" alt="Engagement" /></figure>
+                <figure class="gallery-item"><img src="images/gallery-4.jpg" alt="Travel together" /></figure>
+                <figure class="gallery-item"><img src="images/gallery-5.jpg" alt="Laughing together" /></figure>
+                <figure class="gallery-item"><img src="images/gallery-6.jpg" alt="Sunset walk" /></figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-text">Made with love for Sandra & Harmon | 2026</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll offset for sticky navbar using scroll-margin
+        const navHeight = 80;
+        document.querySelectorAll('section').forEach(sec => {
+            sec.style.scrollMarginTop = navHeight + 'px';
+        });
+
+        // Animated navbar on scroll + subtle parallax
+        const navbar = document.querySelector('.navbar');
+        const hero = document.querySelector('.hero');
+        const handleScroll = () => {
+            if (window.scrollY > 10) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            const offset = window.scrollY * 0.2;
+            hero.style.backgroundPosition = `center calc(50% + ${offset}px)`;
+        };
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll();
+
+        // Reveal on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Countdown Clock
+        function updateCountdown() {
+            const weddingDate = new Date('January 28, 2026 14:00:00').getTime();
+            const now = new Date().getTime();
+            const timeLeft = weddingDate - now;
+
+            if (timeLeft > 0) {
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = days.toString().padStart(3, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            } else {
+                document.getElementById('days').textContent = '000';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+            }
+        }
+
+        // Update countdown immediately and then every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Google Forms submission handling
+        document.getElementById('rsvp-form').addEventListener('submit', function(e) {
+            const btn = this.querySelector('.submit-btn');
+            const btnText = this.querySelector('.btn-text');
+            const btnEmoji = this.querySelector('.btn-emoji');
+            const attendance = this.querySelector('input[name*="entry"]:checked');
+            
+            // Show loading state
+            btn.disabled = true;
+            btnText.textContent = 'Submitting...';
+            btnEmoji.textContent = '📤';
+            
+            // Show success message immediately (form will redirect to Google)
+            setTimeout(() => {
+                btn.style.background = '#4CAF50';
+                btn.style.borderColor = '#4CAF50';
+                btnText.textContent = 'Thank you!';
+                btnEmoji.textContent = '✅';
+                
+                // Show success message
+                const success = document.querySelector('.form-success');
+                const successEmoji = document.querySelector('.success-emoji');
+                
+                if (attendance && attendance.value === 'Will Attend') {
+                    successEmoji.textContent = '🎉';
+                    success.innerHTML = '<span class="success-emoji">🎉</span>We\'re so excited to celebrate with you! Your RSVP has been submitted.';
+                } else {
+                    successEmoji.textContent = '💙';
+                    success.innerHTML = '<span class="success-emoji">💙</span>Thank you for letting us know. We\'ll miss you! Your response has been submitted.';
+                }
+                
+                success.hidden = false;
+                success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 500);
+        });
+
+        // Add visual feedback when radio options are selected
+        document.querySelectorAll('input[name*="entry"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const label = this.closest('.radio-label');
+                const allLabels = document.querySelectorAll('.radio-label');
+                
+                // Remove selected state from all labels
+                allLabels.forEach(l => {
+                    l.classList.remove('selected');
+                    l.style.background = '#FAFAFA';
+                    l.style.borderColor = '#E0E0E0';
+                });
+                
+                // Add selected state to current label
+                label.classList.add('selected');
+                label.style.background = '#F0F8F0';
+                label.style.borderColor = '#4CAF50';
+                
+                // Keep emoji hidden by default, only show on hover
+                const emoji = label.querySelector('.emoji-feedback');
+                emoji.style.opacity = '0';
+                emoji.style.transform = 'translateY(-50%) scale(0.5)';
+            });
+        });
+    </script>
+</body>
+</html>
