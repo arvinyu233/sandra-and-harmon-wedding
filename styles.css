@@ -145,7 +145,7 @@ a:hover {
 
 /* Hero Section */
 .hero-section {
-    background: url('../images/flower-bg.jpg') no-repeat center center/cover;
+    background: url('images/flower-bg.jpg') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -283,11 +283,11 @@ a:hover {
 
 /* Set background images for each event */
 .event-card.ceremony {
-    background: url('../images/church.jpg') no-repeat center center/cover;
+    background: url('images/church.jpg') no-repeat center center/cover;
 }
 
 .event-card.reception {
-    background: url('../images/reception.jpg') no-repeat center center/cover;
+    background: url('images/reception.jpg') no-repeat center center/cover;
 }
 
 /* Overlay for better text readability */
@@ -370,7 +370,7 @@ a:hover {
 
 .form-group {
     margin-bottom: 1.5rem;
-    text-align: left;
+    text-.align: left;
 }
 
 .form-group label {
