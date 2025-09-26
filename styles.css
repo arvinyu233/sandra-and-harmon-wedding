@@ -11,7 +11,9 @@
     --background-color: #FFFFFF; /* White */
     --text-color: #000000; /* Black */
     --accent-color: #FFFFFF; /* White */
-    --gray-100: #F5F5F5; /* Soft Gray */
+    --gray-100: #F8F8F8; /* Very Light Gray */
+    --gray-200: #E5E5E5; /* Light Gray */
+    --gray-300: #CCCCCC; /* Medium Gray */
 }
 
 html {
@@ -19,7 +21,7 @@ html {
 }
 
 body {
-    background: none;
+    background: var(--background-color);
     font-family: 'Lato', sans-serif;
     color: var(--text-color);
     line-height: 1.6;
@@ -159,18 +161,20 @@ p {
     background: url('images/flower-bg.jpg') center/cover no-repeat;
     position: relative;
     height: 100vh;
-    color: #222; /* Darker text for contrast */
+    color: #000000; /* Pure black text for elegance */
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-attachment: fixed;
+    filter: grayscale(100%); /* Convert to black and white */
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(255,255,255,0.15); /* Very light overlay for clarity */
+    background: rgba(255,255,255,0.25); /* Slightly stronger overlay for black and white theme */
     z-index: 1;
 }
 
@@ -179,9 +183,10 @@ p {
     z-index: 2;
     max-width: 800px;
     padding: 0 20px;
-    background: rgba(255,255,255,0.7); /* Soft background for text readability */
+    background: rgba(255,255,255,0.9); /* Stronger background for black and white theme */
     border-radius: 12px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+    border: 2px solid #000000; /* Black border for elegance */
 }
 
 .hero-title {
@@ -190,7 +195,7 @@ p {
     font-weight: 700;
     letter-spacing: 2px;
     margin-bottom: 0.75rem;
-    color: #222;
+    color: #000000; /* Pure black for elegance */
 }
 
 .hero-subtitle {
@@ -199,7 +204,7 @@ p {
     font-weight: 400;
     letter-spacing: 6px;
     margin-bottom: 1.5rem;
-    color: #444;
+    color: #333333; /* Dark gray for contrast */
 }
 
 .hero-details {
@@ -208,7 +213,7 @@ p {
     gap: 0.5rem;
     font-size: 1.1rem;
     font-weight: 600;
-    color: #333;
+    color: #000000; /* Pure black for elegance */
     margin-bottom: 2rem;
 }
 
@@ -225,19 +230,20 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     padding: 1rem 1.5rem;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     min-width: 80px;
     backdrop-filter: blur(10px);
+    border: 2px solid #000000; /* Black border for elegance */
 }
 
 .countdown-number {
     font-family: 'Cormorant Garamond', serif;
     font-size: 2.5rem;
     font-weight: 700;
-    color: #222;
+    color: #000000; /* Pure black for elegance */
     line-height: 1;
     margin-bottom: 0.25rem;
 }
@@ -246,7 +252,7 @@ p {
     font-family: 'Lato', sans-serif;
     font-size: 0.85rem;
     font-weight: 600;
-    color: #666;
+    color: #333333; /* Dark gray for contrast */
     letter-spacing: 1px;
     text-transform: uppercase;
 }
@@ -363,87 +369,104 @@ section {
 
 /* Wedding Section */
 .wedding-section {
-    background: #f9f9f9;
-    padding: 5rem 0;
+    background: #FAFAFA;
+    padding: 6rem 0;
     text-align: center;
+    position: relative;
+}
+
+.wedding-section .section-title {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #000000;
+    margin-bottom: 3rem;
+    letter-spacing: 1px;
+    font-family: 'Cormorant Garamond', serif;
 }
 
 .wedding-events {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    max-width: 1000px;
+    max-width: 800px;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .event-card {
     position: relative;
-    border-radius: 14px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    height: 400px;
+    background: #FFFFFF;
 }
 
 .event-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 
 /* Ceremony Card */
 .event-card.ceremony {
     background: url('images/church.jpg') center/cover no-repeat;
-    color: #222;
-}
-
-.event-card.ceremony::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(255,255,255,0.55); /* Lighter overlay for clarity */
-    z-index: 1;
+    background-size: cover;
+    background-position: center;
+    color: #FFFFFF;
+    filter: grayscale(100%);
 }
 
 /* Reception Card */
 .event-card.reception {
     background: url('images/reception.jpg') center/cover no-repeat;
-    color: #222;
-}
-
-.event-card.reception::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(255,255,255,0.55); /* Lighter overlay for clarity */
-    z-index: 1;
+    background-size: cover;
+    background-position: center;
+    color: #FFFFFF;
+    filter: grayscale(100%);
 }
 
 .event-card-content {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 2;
     padding: 2rem;
-    background: rgba(255,255,255,0.85); /* Soft background for text readability */
-    border-radius: 10px;
+    background: rgba(0,0,0,0.6);
+    color: #FFFFFF;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .event-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
     text-transform: uppercase;
-    color: #222;
-    letter-spacing: 1px;
+    color: #FFFFFF;
+    letter-spacing: 2px;
+    font-family: 'Cormorant Garamond', serif;
+    text-align: center;
 }
 
 .event-details p {
-    font-size: 1rem;
-    margin: 0.5rem 0;
-    line-height: 1.5;
-    color: #444;
+    font-size: 1.3rem;
+    margin: 0.75rem 0;
+    line-height: 1.6;
+    color: #FFFFFF;
+    font-weight: 500;
+    text-align: center;
 }
 
 .event-details strong {
     font-weight: 700;
-    color: #ff6f61;
+    color: #FFFFFF;
+    font-size: 1.4rem;
 }
 
 /* RSVP Section */
@@ -455,18 +478,33 @@ section {
 }
 
 .rsvp-form {
-    background: var(--background-color);
-    padding: 3rem 2.5rem;
-    border-radius: 16px;
-    border: 2px solid var(--gray-100);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    max-width: 580px;
+    background: linear-gradient(135deg, #FFFFFF 0%, #F8F8F8 100%);
+    padding: 3.5rem 2.5rem;
+    border-radius: 20px;
+    border: 4px solid #000000; /* Thicker black border for elegance */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
     margin: 0 auto;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.rsvp-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #000000, #333333, #000000);
+    z-index: 1;
 }
 
 .form-group {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+    z-index: 2;
 }
 
 .form-group label {
@@ -481,7 +519,7 @@ section {
 }
 
 .form-group label[for="name"] {
-    text-align: left;
+    text-align: center;
     font-family: 'Lato', sans-serif;
     font-size: 1rem;
     margin-bottom: 0.5rem;
@@ -510,13 +548,14 @@ section {
 .form-group input[type="email"],
 .form-group select {
     width: 100%;
-    padding: 1rem;
-    border: 2px solid #E0E0E0;
-    border-radius: 8px;
-    font-size: 1rem;
+    padding: 1.2rem 1.5rem;
+    border: 3px solid #CCCCCC;
+    border-radius: 12px;
+    font-size: 1.1rem;
     font-family: 'Lato', sans-serif;
-    transition: border-color 0.3s ease;
+    transition: all 0.3s ease;
     background-color: #FFFFFF;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .form-group input[type="text"]:focus,
@@ -524,7 +563,8 @@ section {
 .form-group select:focus {
     outline: none;
     border-color: #000000;
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
 }
 
 .form-group select {
@@ -549,21 +589,22 @@ section {
     gap: 1rem;
     cursor: pointer;
     font-family: 'Lato', sans-serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #000000;
-    padding: 1rem 1.5rem;
-    border: 2px solid #E0E0E0;
-    border-radius: 12px;
+    padding: 1.2rem 1.5rem;
+    border: 3px solid #CCCCCC;
+    border-radius: 15px;
     transition: all 0.3s ease;
     position: relative;
-    background: #FAFAFA;
+    background: linear-gradient(135deg, #FFFFFF 0%, #F8F8F8 100%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .radio-label:hover {
     border-color: #000000;
-    background: #F5F5F5;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #F8F8F8 0%, #F0F0F0 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 .radio-label:hover .emoji-feedback {
@@ -578,7 +619,7 @@ section {
 .radio-custom {
     width: 24px;
     height: 24px;
-    border: 2px solid #E0E0E0;
+    border: 2px solid #CCCCCC;
     border-radius: 50%;
     position: relative;
     transition: all 0.3s ease;
@@ -661,24 +702,42 @@ section {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 1rem 2rem;
-    background: #000;
+    padding: 1.2rem 2.5rem;
+    background: linear-gradient(135deg, #000000 0%, #333333 100%);
     color: #fff;
-    border: 2px solid #000;
-    border-radius: 12px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+    border: 3px solid #000000;
+    border-radius: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 1rem;
+    font-size: 1.1rem;
     width: 100%;
-    margin-top: 1rem;
+    margin-top: 2rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+    left: 100%;
 }
 
 .btn:hover { 
-    transform: translateY(-2px); 
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    background: #333;
+    transform: translateY(-4px); 
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    background: linear-gradient(135deg, #333333 0%, #000000 100%);
 }
 
 .btn:active { 
@@ -740,9 +799,10 @@ section {
 /* Gallery */
 .gallery-section { background: var(--background-color); }
 .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.gallery-item { overflow: hidden; border-radius: 8px; }
+.gallery-item { overflow: hidden; border-radius: 8px; border: 2px solid #000000; }
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: transform 300ms ease, filter 300ms ease; }
 .gallery-item:hover img { transform: scale(1.03); filter: grayscale(0%); }
+.gallery-item:hover { border-color: #333333; }
 
 /* Registry Section */
 .registry-section { display: none; }
@@ -808,6 +868,10 @@ section {
     
     .nav-link:last-child {
         border-bottom: none;
+    }
+    
+    .hero {
+        background-attachment: scroll; /* Fix parallax on mobile */
     }
     
     .hero-title {
@@ -890,6 +954,11 @@ section {
         font-size: 0.75rem;
     }
     
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
     .registry-stores { display: none; }
     .registry-link { display: none; }
     
@@ -926,5 +995,27 @@ section {
     
     .event-card {
         padding: 1.5rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    
+    .countdown-container {
+        gap: 0.5rem;
+    }
+    
+    .countdown-item {
+        padding: 0.5rem 0.75rem;
+        min-width: 60px;
+    }
+    
+    .countdown-number {
+        font-size: 1.5rem;
+    }
+    
+    .countdown-label {
+        font-size: 0.7rem;
     }
 }

@@ -115,7 +115,7 @@
     <!-- RSVP Section -->
     <section id="rsvp" class="rsvp-section reveal" aria-label="RSVP">
         <div class="container">
-            <h2 class="section-title">Kindly Respond By September 1st</h2>
+            <h2 class="section-title">Kindly Respond By December 1st</h2>
             <form class="rsvp-form" id="rsvp-form" action="https://docs.google.com/forms/d/e/1FAIpQLSen6cQc5eLPjLnEKOaLcztdfaStOCr_5bTKlixXAkNNs27xBg/formResponse" method="POST" target="_blank">
                 <div class="form-group">
                     <label for="name">First & Last Name</label>
@@ -177,12 +177,12 @@
         <div class="container">
             <h2 class="section-title">Photo Gallery</h2>
             <div class="gallery-grid">
-                <figure class="gallery-item"><img src="images/gallery-1.jpg" alt="Sandra and Harmon" /></figure>
-                <figure class="gallery-item"><img src="images/gallery-2.jpg" alt="Moments together" /></figure>
-                <figure class="gallery-item"><img src="images/gallery-3.jpg" alt="Engagement" /></figure>
-                <figure class="gallery-item"><img src="images/gallery-4.jpg" alt="Travel together" /></figure>
-                <figure class="gallery-item"><img src="images/gallery-5.jpg" alt="Laughing together" /></figure>
-                <figure class="gallery-item"><img src="images/gallery-6.jpg" alt="Sunset walk" /></figure>
+                <figure class="gallery-item"><img src="images/couple-indoor-selfie.jpg" alt="Sandra and Harmon - Indoor selfie" /></figure>
+                <figure class="gallery-item"><img src="images/couple-formal-portrait.jpg" alt="Sandra and Harmon - Formal portrait" /></figure>
+                <figure class="gallery-item"><img src="images/couple-boat-selfie.jpg" alt="Sandra and Harmon - Boat adventure" /></figure>
+                <figure class="gallery-item"><img src="images/couple-restaurant-dining.jpg" alt="Sandra and Harmon - Dining together" /></figure>
+                <figure class="gallery-item"><img src="images/couple-autumn-bridge.jpg" alt="Sandra and Harmon - Autumn bridge" /></figure>
+                <figure class="gallery-item"><img src="images/sands.jpg" alt="Sandra and Harmon - Special moment" /></figure>
             </div>
         </div>
     </section>
@@ -290,7 +290,7 @@
                 const success = document.querySelector('.form-success');
                 const successEmoji = document.querySelector('.success-emoji');
                 
-                if (attendance && attendance.value === 'Will Attend') {
+                if (attendance && attendance.value === 'YES') {
                     successEmoji.textContent = '🎉';
                     success.innerHTML = '<span class="success-emoji">🎉</span>We\'re so excited to celebrate with you! Your RSVP has been submitted.';
                 } else {
