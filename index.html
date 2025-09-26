@@ -9,6 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- Google Forms Integration -->
+    <!-- SEO & Social -->
+    <meta name="description" content="Sandra & Harmon are getting married on January 28, 2026 in Cabuyao City, Philippines. RSVP, view schedule, locations, and photos.">
+    <meta property="og:title" content="Sandra & Harmon - Wedding">
+    <meta property="og:description" content="RSVP and find details for Sandra & Harmon's wedding.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/sands.jpg">
+    <link rel="icon" href="images/sands.jpg">
 </head>
 <body>
     <!-- Header & Navigation -->
@@ -25,8 +32,12 @@
             <ul class="nav-links">
                 <li><a href="#story" class="nav-link">Our Story</a></li>
                 <li><a href="#wedding" class="nav-link">The Wedding</a></li>
+                <li><a href="#schedule" class="nav-link">Schedule</a></li>
+                <li><a href="#locations" class="nav-link">Locations</a></li>
+                <li><a href="#accommodations" class="nav-link">Accommodations</a></li>
                 <li><a href="#rsvp" class="nav-link">RSVP</a></li>
                 <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
             </ul>
         </nav>
     </header>
@@ -65,6 +76,66 @@
         </div>
     </section>
 
+    <!-- Schedule Section -->
+    <section id="schedule" class="schedule-section reveal" aria-label="Schedule">
+        <div class="container">
+            <h2 class="section-title">Wedding Day Schedule</h2>
+            <ol class="timeline">
+                <li class="timeline-item"><span class="time">1:15 PM</span><span class="event">Guest Arrival & Seating</span></li>
+                <li class="timeline-item"><span class="time">2:00 PM</span><span class="event">Ceremony Begins</span></li>
+                <li class="timeline-item"><span class="time">3:00 PM</span><span class="event">Photos & Cocktail Hour</span></li>
+                <li class="timeline-item"><span class="time">5:00 PM</span><span class="event">Reception & Dinner</span></li>
+                <li class="timeline-item"><span class="time">7:30 PM</span><span class="event">Toasts & First Dance</span></li>
+                <li class="timeline-item"><span class="time">9:30 PM</span><span class="event">Send-off</span></li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section id="locations" class="locations-section reveal" aria-label="Locations">
+        <div class="container">
+            <h2 class="section-title">Locations</h2>
+            <div class="locations-grid">
+                <div class="location-card">
+                    <h3 class="location-title">Ceremony</h3>
+                    <p class="location-venue">Montecito, Nuvali</p>
+                    <p class="location-address">Cabuyao City, Philippines</p>
+                    <a class="location-link" target="_blank" rel="noopener" href="https://maps.google.com/?q=Montecito%20Nuvali%20Cabuyao%20City%20Philippines">Open in Google Maps</a>
+                </div>
+                <div class="location-card">
+                    <h3 class="location-title">Reception</h3>
+                    <p class="location-venue">Lakehall, Nena's Sanctuary</p>
+                    <p class="location-address">Sta. Elena, Cabuyao City, Philippines</p>
+                    <a class="location-link" target="_blank" rel="noopener" href="https://maps.google.com/?q=Lakehall%20Nena's%20Sanctuary%20Sta.%20Elena%20Cabuyao%20City%20Philippines">Open in Google Maps</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accommodations Section -->
+    <section id="accommodations" class="accommodations-section reveal" aria-label="Accommodations">
+        <div class="container">
+            <h2 class="section-title">Accommodations</h2>
+            <div class="accommodations-grid">
+                <div class="hotel-card">
+                    <h3 class="hotel-name">Seda Nuvali</h3>
+                    <p class="hotel-distance">~10 minutes from ceremony</p>
+                    <a class="hotel-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Seda%20Nuvali">View on Google Maps</a>
+                </div>
+                <div class="hotel-card">
+                    <h3 class="hotel-name">The Lake Hotel Tagaytay</h3>
+                    <p class="hotel-distance">~35 minutes from reception</p>
+                    <a class="hotel-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=The%20Lake%20Hotel%20Tagaytay">View on Google Maps</a>
+                </div>
+                <div class="hotel-card">
+                    <h3 class="hotel-name">Microtel by Wyndham South Forbes</h3>
+                    <p class="hotel-distance">~25 minutes from ceremony</p>
+                    <a class="hotel-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Microtel%20South%20Forbes">View on Google Maps</a>
+                </div>
+            </div>
+            <p class="accommodations-note">Tip: Book early for the best rates and availability.</p>
+        </div>
+    </section>
     <!-- Our Story Section -->
     <section id="story" class="story-section reveal" aria-label="Our Story">
         <div class="container">
@@ -187,10 +258,32 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section reveal" aria-label="FAQ">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq">
+                <button class="faq-item" aria-expanded="false"><span>What is the dress code?</span><span class="faq-icon">+</span></button>
+                <div class="faq-content" hidden>Semi-formal. Feel free to wear elegant neutrals to match our theme.</div>
+                <button class="faq-item" aria-expanded="false"><span>Can we bring kids?</span><span class="faq-icon">+</span></button>
+                <div class="faq-content" hidden>Yes, children are welcome. Please include them in your guest count.</div>
+                <button class="faq-item" aria-expanded="false"><span>Is there parking available?</span><span class="faq-icon">+</span></button>
+                <div class="faq-content" hidden>Yes, free parking is available at both venues.</div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <p class="footer-text">Made with love for Sandra & Harmon | 2026</p>
     </footer>
+
+    <!-- Lightbox Modal & Back To Top -->
+    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image preview">
+        <button class="lightbox-close" aria-label="Close">×</button>
+        <img src="" alt="Gallery preview" class="lightbox-img" />
+    </div>
+    <button class="back-to-top" aria-label="Back to top">↑</button>
 
     <script>
         // Smooth scrolling for navigation links
@@ -239,6 +332,15 @@
         }, { threshold: 0.15 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+        // Back to top
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('visible', window.scrollY > 400);
+        }, { passive: true });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
         // Countdown Clock
         function updateCountdown() {
             const weddingDate = new Date('January 28, 2026 14:00:00').getTime();
@@ -266,6 +368,29 @@
         // Update countdown immediately and then every second
         updateCountdown();
         setInterval(updateCountdown, 1000);
+
+        // Gallery Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = lightbox.querySelector('.lightbox-img');
+        const lightboxClose = lightbox.querySelector('.lightbox-close');
+        document.querySelectorAll('.gallery-item img').forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.add('open');
+                lightbox.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('open');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        });
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightboxClose.click();
+            }
+        });
 
         // Google Forms submission handling
         document.getElementById('rsvp-form').addEventListener('submit', function(e) {
@@ -370,6 +495,23 @@
                 }
             });
         }
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-item').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                btn.setAttribute('aria-expanded', String(!expanded));
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('.faq-icon');
+                if (expanded) {
+                    content.hidden = true;
+                    icon.textContent = '+';
+                } else {
+                    content.hidden = false;
+                    icon.textContent = '−';
+                }
+            });
+        });
     </script>
 </body>
 </html>
