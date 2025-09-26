@@ -123,7 +123,7 @@
                 </div>
                 <div class="form-group">
                     <label for="email">Email Address</label>
-                    <input type="email" id="email" name="entry.2055545111" required>
+                    <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
                     <label for="guests">Number of Guests</label>
@@ -272,7 +272,7 @@
             const btn = this.querySelector('.submit-btn');
             const btnText = this.querySelector('.btn-text');
             const btnEmoji = this.querySelector('.btn-emoji');
-            const attendance = this.querySelector('input[name*="entry"]:checked');
+            const attendance = this.querySelector('input[name="entry.1485655847"]:checked');
             
             // Show loading state
             btn.disabled = true;
@@ -304,7 +304,7 @@
         });
 
         // Add visual feedback when radio options are selected
-        document.querySelectorAll('input[name*="entry"]').forEach(radio => {
+        document.querySelectorAll('input[name="entry.1485655847"]').forEach(radio => {
             radio.addEventListener('change', function() {
                 const label = this.closest('.radio-label');
                 const allLabels = document.querySelectorAll('.radio-label');
