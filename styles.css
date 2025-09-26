@@ -815,6 +815,11 @@ section {
 .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
 .back-to-top:hover { background: #333; }
 
+/* Music toggle */
+.music-toggle { position: fixed; left: 20px; bottom: 20px; width: 44px; height: 44px; border-radius: 50%; background: #fff; color: #000; border: 2px solid #000; display: grid; place-items: center; cursor: pointer; box-shadow: 0 6px 18px rgba(0,0,0,0.2); z-index: 1500; }
+.music-toggle.active { background: #000; color: #fff; }
+.music-toggle:hover { transform: translateY(-2px); }
+
 /* Schedule */
 .schedule-section { background: var(--background-color); }
 .timeline { list-style: none; max-width: 800px; margin: 0 auto; padding: 0; border-left: 2px solid #000; }

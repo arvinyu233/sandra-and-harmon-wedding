@@ -284,6 +284,13 @@
         <img src="" alt="Gallery preview" class="lightbox-img" />
     </div>
     <button class="back-to-top" aria-label="Back to top">↑</button>
+    
+    <!-- Music Toggle -->
+    <audio id="bg-audio" loop preload="none">
+        <!-- Replace the src below with your preferred MP3 in an `audio/` folder -->
+        <source src="audio/wedding-theme.mp3" type="audio/mpeg">
+    </audio>
+    <button class="music-toggle" id="music-toggle" aria-label="Toggle music" aria-pressed="false">♪</button>
 
     <script>
         // Smooth scrolling for navigation links
@@ -512,6 +519,44 @@
                 }
             });
         });
+
+        // Music toggle
+        (function() {
+            const audio = document.getElementById('bg-audio');
+            const toggle = document.getElementById('music-toggle');
+            if (!audio || !toggle) return;
+            let isPlaying = false;
+
+            function setState(playing) {
+                isPlaying = playing;
+                toggle.classList.toggle('active', playing);
+                toggle.setAttribute('aria-pressed', String(playing));
+                toggle.textContent = playing ? '❚❚' : '♪';
+            }
+
+            toggle.addEventListener('click', async () => {
+                try {
+                    if (!isPlaying) {
+                        await audio.play();
+                        setState(true);
+                    } else {
+                        audio.pause();
+                        setState(false);
+                    }
+                } catch (err) {
+                    console.warn('Audio playback failed (likely missing file or browser policy).');
+                    alert('Tap again to allow audio, or add an audio file at audio/wedding-theme.mp3');
+                }
+            });
+
+            // Some browsers block autoplay; show button but do not auto-play
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden && isPlaying) {
+                    audio.pause();
+                    setState(false);
+                }
+            });
+        })();
     </script>
 </body>
 </html>
