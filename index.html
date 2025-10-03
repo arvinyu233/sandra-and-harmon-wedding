@@ -810,26 +810,34 @@
             if (!audio || !toggle) return;
             let isPlaying = false;
             let userInteracted = false;
+            let audioLoaded = false;
             const PREF_KEY = 'music_pref_enabled';
             
-            // Try to start music on any early user interaction
+            // Enhanced audio loading detection
+            const checkAudioReady = () => {
+                return audio.readyState >= 2; // HAVE_CURRENT_DATA
+            };
+
+            // Try to start music on any user interaction
             const tryStartMusic = async () => {
-                if (userInteracted || isPlaying) return;
+                if (userInteracted || isPlaying || !audioLoaded) return;
                 try {
-                    audio.volume = 0.5;
+                    audio.volume = 0.4;
                     await audio.play();
                     setState(true);
                     userInteracted = true;
-                    console.log('Music started on early user interaction');
+                    console.log('Music started on user interaction');
+                    toggle.style.animation = '';
                 } catch (e) {
-                    console.log('Early music start failed:', e);
+                    console.log('Music start failed:', e);
                 }
             };
             
-            // Listen for any user interaction immediately
-            document.addEventListener('click', tryStartMusic, { once: true, passive: true });
-            document.addEventListener('touchstart', tryStartMusic, { once: true, passive: true });
-            document.addEventListener('keydown', tryStartMusic, { once: true });
+            // Listen for any user interaction
+            const interactionEvents = ['click', 'touchstart', 'keydown', 'mousedown'];
+            interactionEvents.forEach(event => {
+                document.addEventListener(event, tryStartMusic, { once: true, passive: true });
+            });
 
             function setState(playing) {
                 isPlaying = playing;
@@ -839,13 +847,23 @@
                 try { localStorage.setItem(PREF_KEY, playing ? '1' : '0'); } catch (_) {}
             }
 
-            // Handle audio loading
+            // Enhanced audio loading handlers
+            audio.addEventListener('loadstart', () => {
+                console.log('Audio loading started');
+                toggle.textContent = '⏳';
+                toggle.title = 'Loading music...';
+            });
+
             audio.addEventListener('loadeddata', () => {
                 console.log('Audio loaded successfully');
+                audioLoaded = true;
+                toggle.textContent = '♪';
+                toggle.title = 'Click to start music';
             });
 
             audio.addEventListener('canplay', () => {
                 console.log('Audio can play');
+                audioLoaded = true;
             });
 
             audio.addEventListener('error', (e) => {
@@ -856,21 +874,34 @@
                     readyState: audio.readyState
                 });
                 toggle.textContent = '🔇';
-                toggle.title = 'Audio file not found';
+                toggle.title = 'Audio file not found - check if audio files exist';
             });
 
-            // Handle audio end (for non-looping scenarios)
+            // Handle audio end
             audio.addEventListener('ended', () => {
                 if (isPlaying) {
                     setState(false);
                 }
             });
 
+            // Enhanced toggle click handler
             toggle.addEventListener('click', async () => {
                 try {
                     if (!isPlaying) {
-                        // Set volume and play
-                        audio.volume = 0.5;
+                        if (!audioLoaded) {
+                            toggle.textContent = '⏳';
+                            toggle.title = 'Loading...';
+                            // Wait for audio to be ready
+                            await new Promise(resolve => {
+                                if (checkAudioReady()) {
+                                    resolve();
+                                } else {
+                                    audio.addEventListener('canplay', resolve, { once: true });
+                                }
+                            });
+                        }
+                        
+                        audio.volume = 0.4;
                         await audio.play();
                         setState(true);
                         userInteracted = true;
@@ -882,15 +913,16 @@
                     }
                 } catch (err) {
                     console.warn('Audio playback failed:', err);
-                    if (!userInteracted) {
-                        // First interaction - show helpful message
-                        alert('Click the music button to enable audio playback. Some browsers require user interaction before playing audio.');
-                        userInteracted = true;
-                    } else {
-                        // Subsequent failures - show error
-                        toggle.textContent = '🔇';
-                        toggle.title = 'Audio playback failed';
-                    }
+                    toggle.textContent = '🔇';
+                    toggle.title = 'Audio playback failed - click to try again';
+                    
+                    // Reset after a delay
+                    setTimeout(() => {
+                        if (!isPlaying) {
+                            toggle.textContent = '♪';
+                            toggle.title = 'Click to start music';
+                        }
+                    }, 3000);
                 }
             });
 
@@ -909,47 +941,51 @@
                 }
             });
 
-            // Attempt autoplay respecting prior user preference
+            // Improved autoplay attempt
             (async function initAutoplay() {
-                // Wait a bit for the audio element to be ready
-                await new Promise(resolve => setTimeout(resolve, 100));
+                // Wait for audio to be ready
+                await new Promise(resolve => {
+                    if (checkAudioReady()) {
+                        resolve();
+                    } else {
+                        const checkReady = () => {
+                            if (checkAudioReady()) {
+                                resolve();
+                            } else {
+                                setTimeout(checkReady, 100);
+                            }
+                        };
+                        checkReady();
+                    }
+                });
+                
+                audioLoaded = true;
                 
                 try {
                     const pref = localStorage.getItem(PREF_KEY);
-                    if (pref === '0') return; // user opted out
+                    if (pref === '0') {
+                        console.log('User previously disabled music');
+                        return;
+                    }
                     
-                    // Set volume and try to play immediately
-                    audio.volume = 0.35;
+                    // Try autoplay with lower volume
+                    audio.volume = 0.3;
                     await audio.play();
                     setState(true);
                     console.log('Music started automatically');
                 } catch (err) {
                     console.log('Autoplay blocked, waiting for user interaction');
-                    // Show a subtle hint to the user
+                    // Show visual hint
                     toggle.title = 'Click to start music';
                     toggle.style.animation = 'pulse 2s infinite';
                     
-                    // Fallback: start on first user gesture anywhere
-                    const resume = async () => {
-                        try {
-                            audio.volume = 0.5;
-                            await audio.play();
-                            setState(true);
-                            userInteracted = true;
-                            console.log('Music started on user interaction');
-                            toggle.style.animation = '';
-                            window.removeEventListener('pointerdown', resume);
-                            window.removeEventListener('keydown', resume);
-                            window.removeEventListener('click', resume);
-                            window.removeEventListener('touchstart', resume);
-                        } catch (e) {
-                            console.warn('Failed to start music on interaction:', e);
+                    // Add a more prominent visual cue
+                    setTimeout(() => {
+                        if (!userInteracted && !isPlaying) {
+                            toggle.style.border = '2px solid #ff6b6b';
+                            toggle.style.boxShadow = '0 0 10px rgba(255, 107, 107, 0.5)';
                         }
-                    };
-                    window.addEventListener('pointerdown', resume, { once: true, passive: true });
-                    window.addEventListener('keydown', resume, { once: true });
-                    window.addEventListener('click', resume, { once: true, passive: true });
-                    window.addEventListener('touchstart', resume, { once: true, passive: true });
+                    }, 2000);
                 }
             })();
         })();
