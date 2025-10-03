@@ -410,7 +410,7 @@
     <div class="sticky-rsvp"><a href="#rsvp" class="btn">RSVP</a></div>
     
     <!-- Music Toggle -->
-    <audio id="bg-audio" loop preload="none">
+    <audio id="bg-audio" loop preload="auto" autoplay playsinline muted>
         <!-- Multiple audio sources for better browser compatibility -->
         <source src="audio/wedding-theme.mp3" type="audio/mpeg">
         <source src="audio/cant help falling.mp3" type="audio/mpeg">
@@ -810,12 +810,14 @@
             if (!audio || !toggle) return;
             let isPlaying = false;
             let userInteracted = false;
+            const PREF_KEY = 'music_pref_enabled';
 
             function setState(playing) {
                 isPlaying = playing;
                 toggle.classList.toggle('active', playing);
                 toggle.setAttribute('aria-pressed', String(playing));
                 toggle.textContent = playing ? '❚❚' : '♪';
+                try { localStorage.setItem(PREF_KEY, playing ? '1' : '0'); } catch (_) {}
             }
 
             // Handle audio loading
@@ -839,7 +841,8 @@
             toggle.addEventListener('click', async () => {
                 try {
                     if (!isPlaying) {
-                        // Set volume to a reasonable level (50%)
+                        // Unmute and set volume, then play
+                        audio.muted = false;
                         audio.volume = 0.5;
                         await audio.play();
                         setState(true);
@@ -876,6 +879,33 @@
                     audio.pause();
                 }
             });
+
+            // Attempt autoplay respecting prior user preference
+            (async function initAutoplay() {
+                try {
+                    const pref = localStorage.getItem(PREF_KEY);
+                    if (pref === '0') return; // user opted out
+                    audio.muted = true;
+                    audio.volume = 0.35;
+                    await audio.play();
+                    setState(true);
+                } catch (err) {
+                    // Fallback: start on first user gesture anywhere
+                    const resume = async () => {
+                        try {
+                            audio.muted = false;
+                            audio.volume = 0.5;
+                            await audio.play();
+                            setState(true);
+                            userInteracted = true;
+                            window.removeEventListener('pointerdown', resume);
+                            window.removeEventListener('keydown', resume);
+                        } catch (_) {}
+                    };
+                    window.addEventListener('pointerdown', resume, { once: true, passive: true });
+                    window.addEventListener('keydown', resume, { once: true });
+                }
+            })();
         })();
     </script>
 </body>
