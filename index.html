@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="site.webmanifest">
     <!-- Google Forms Integration -->
     <!-- SEO & Social -->
     <meta name="description" content="Sandra & Harmon are getting married on January 28, 2026 in Cabuyao City, Philippines. RSVP, view schedule, locations, and photos.">
@@ -33,11 +34,11 @@
                 <li><a href="#story" class="nav-link">Our Story</a></li>
                 <li><a href="#wedding" class="nav-link">The Wedding</a></li>
                 <li><a href="#schedule" class="nav-link">Schedule</a></li>
-                <li><a href="#locations" class="nav-link">Locations</a></li>
                 <li><a href="#accommodations" class="nav-link">Accommodations</a></li>
                 <li><a href="#rsvp" class="nav-link">RSVP</a></li>
                 <li><a href="#gallery" class="nav-link">Gallery</a></li>
                 <li><a href="#faq" class="nav-link">FAQ</a></li>
+                <li><a href="#gift" class="nav-link">Gift</a></li>
             </ul>
         </nav>
     </header>
@@ -91,26 +92,6 @@
         </div>
     </section>
 
-    <!-- Locations Section -->
-    <section id="locations" class="locations-section reveal" aria-label="Locations">
-        <div class="container">
-            <h2 class="section-title">Locations</h2>
-            <div class="locations-grid">
-                <div class="location-card">
-                    <h3 class="location-title">Ceremony</h3>
-                    <p class="location-venue">Montecito, Nuvali</p>
-                    <p class="location-address">Cabuyao City, Philippines</p>
-                    <a class="location-link" target="_blank" rel="noopener" href="https://maps.google.com/?q=Montecito%20Nuvali%20Cabuyao%20City%20Philippines">Open in Google Maps</a>
-                </div>
-                <div class="location-card">
-                    <h3 class="location-title">Reception</h3>
-                    <p class="location-venue">Lakehall, Nena's Sanctuary</p>
-                    <p class="location-address">Sta. Elena, Cabuyao City, Philippines</p>
-                    <a class="location-link" target="_blank" rel="noopener" href="https://maps.google.com/?q=Lakehall%20Nena's%20Sanctuary%20Sta.%20Elena%20Cabuyao%20City%20Philippines">Open in Google Maps</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Accommodations Section -->
     <section id="accommodations" class="accommodations-section reveal" aria-label="Accommodations">
@@ -142,7 +123,7 @@
             <h2 class="section-title">Our Story</h2>
             <div class="story-content">
                 <div class="story-image">
-                    <img src="images/sands.jpg" alt="Sandra and Harmon" class="story-photo">
+                    <img src="images/sands.jpg" alt="Sandra and Harmon" class="story-photo" loading="lazy" decoding="async">
                 </div>
                 <div class="story-text">
                     <p>Our love story began in the most unexpected way...</p>
@@ -152,30 +133,56 @@
     </section>
 
     <!-- The Wedding Section -->
-    <section id="wedding" class="wedding-section">
+    <section id="wedding" class="wedding-section reveal" aria-label="The Wedding">
         <div class="container">
             <h2 class="section-title">The Wedding</h2>
             <div class="wedding-events">
                 <!-- Ceremony -->
                 <div class="event-card ceremony">
+                    <img class="event-photo" src="images/church.jpg" alt="Ceremony location">
                     <div class="event-card-content">
                         <h3 class="event-title">The Ceremony</h3>
                         <div class="event-details">
-                            <p class="event-time"><strong>Time:</strong> 2:00 PM</p>
-                            <p class="event-location"><strong>Location:</strong> Montecito, Nuvali</p>
-                            <p class="event-address">Cabuyao City, Philippines</p>
+                            <div class="event-info">
+                                <p class="event-time"><strong>Time:</strong> 2:00 PM</p>
+                                <p class="event-location"><strong>Location:</strong> Montecito, Nuvali</p>
+                                <p class="event-address">Cabuyao City, Philippines</p>
+                            </div>
+                            <a class="location-button" target="_blank" rel="noopener" href="https://maps.google.com/?q=Montecito%20Nuvali%20Cabuyao%20City%20Philippines">
+                                <span class="button-icon">📍</span>
+                                <span class="button-text">Open in Google Maps</span>
+                            </a>
+                            <div class="calendar-buttons">
+                                <a class="location-button" target="_blank" rel="noopener" href="https://www.google.com/calendar/render?action=TEMPLATE&text=Sandra%20%26%20Harmon%20Ceremony&dates=20260128T060000Z/20260128T073000Z&details=Wedding%20Ceremony&location=Montecito%2C%20Nuvali%2C%20Cabuyao%20City%2C%20Philippines">
+                                    <span class="button-icon">🗓️</span>
+                                    <span class="button-text">Add to Google</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Reception -->
                 <div class="event-card reception">
+                    <img class="event-photo" src="images/reception.jpg" alt="Reception venue">
                     <div class="event-card-content">
                         <h3 class="event-title">The Reception</h3>
                         <div class="event-details">
-                            <p class="event-time"><strong>Time:</strong> After Ceremony</p>
-                            <p class="event-location"><strong>Location:</strong> Lakehall, Nena's Sanctuary</p>
-                            <p class="event-address">Sta. Elena, Cabuyao City, Philippines</p>
+                            <div class="event-info">
+                                <p class="event-time"><strong>Time:</strong> After Ceremony</p>
+                                <p class="event-location"><strong>Location:</strong> Lakehall, Nena's Sanctuary</p>
+                                <p class="event-address">Sta. Elena, Cabuyao City, Philippines</p>
+                            </div>
+                            <a class="location-button" target="_blank" rel="noopener" href="https://maps.google.com/?q=Lakehall%20Nena's%20Sanctuary%20Sta.%20Elena%20Cabuyao%20City%20Philippines">
+                                <span class="button-icon">📍</span>
+                                <span class="button-text">Open in Google Maps</span>
+                            </a>
+                            <div class="calendar-buttons">
+                                <a class="location-button" target="_blank" rel="noopener" href="https://www.google.com/calendar/render?action=TEMPLATE&text=Sandra%20%26%20Harmon%20Reception&dates=20260128T090000Z/20260128T130000Z&details=Wedding%20Reception&location=Lakehall%2C%20Nena's%20Sanctuary%2C%20Sta.%20Elena%2C%20Cabuyao%20City%2C%20Philippines">
+                                    <span class="button-icon">🗓️</span>
+                                    <span class="button-text">Add to Google</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -187,18 +194,25 @@
     <section id="rsvp" class="rsvp-section reveal" aria-label="RSVP">
         <div class="container">
             <h2 class="section-title">Kindly Respond By December 1st</h2>
-            <form class="rsvp-form" id="rsvp-form" action="https://docs.google.com/forms/d/e/1FAIpQLSen6cQc5eLPjLnEKOaLcztdfaStOCr_5bTKlixXAkNNs27xBg/formResponse" method="POST" target="_blank">
+            <form class="rsvp-form" id="rsvp-form" action="https://docs.google.com/forms/d/e/1FAIpQLSen6cQc5eLPjLnEKOaLcztdfaStOCr_5bTKlixXAkNNs27xBg/formResponse" method="POST" target="hidden_iframe">
                 <div class="form-group">
                     <label for="name">First & Last Name</label>
-                    <input type="text" id="name" name="entry.671845706" required>
+                    <input type="text" id="name" name="entry.671845706" required aria-invalid="false">
+                    <small class="field-error" id="error-name" hidden>Please enter your first and last name.</small>
+                </div>
+                <!-- Honeypot anti-spam field (hidden from users) -->
+                <div class="form-group" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+                    <label for="confirm_email">Confirm Email</label>
+                    <input type="text" id="confirm_email" name="confirm_email" tabindex="-1" autocomplete="off">
                 </div>
                 <div class="form-group">
                     <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="entry.123456789" required aria-invalid="false">
+                    <small class="field-error" id="error-email" hidden>Please enter a valid email address.</small>
                 </div>
                 <div class="form-group">
                     <label for="guests">Number of Guests</label>
-                    <select id="guests" name="entry.1893890701" required>
+                    <select id="guests" name="entry.1893890701" required aria-invalid="false">
                         <option value="">Select number of guests</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -206,6 +220,7 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
+                    <small class="field-error" id="error-guests" hidden>Please select the number of guests.</small>
                 </div>
                 <div class="form-group attendance-question">
                     <label>Will you be attending?</label>
@@ -232,7 +247,12 @@
                     <span class="success-emoji">🎉</span>
                     Thank you for your response! We look forward to celebrating with you.
                 </p>
+                <p class="form-error" aria-live="polite" hidden>
+                    <span class="error-emoji">⚠️</span>
+                    Please fill in all required fields before submitting.
+                </p>
             </form>
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
         </div>
     </section>
 
@@ -248,12 +268,12 @@
         <div class="container">
             <h2 class="section-title">Photo Gallery</h2>
             <div class="gallery-grid">
-                <figure class="gallery-item"><img src="images/couple-indoor-selfie.jpg" alt="Sandra and Harmon - Indoor selfie" /></figure>
-                <figure class="gallery-item"><img src="images/couple-formal-portrait.jpg" alt="Sandra and Harmon - Formal portrait" /></figure>
-                <figure class="gallery-item"><img src="images/couple-boat-selfie.jpg" alt="Sandra and Harmon - Boat adventure" /></figure>
-                <figure class="gallery-item"><img src="images/couple-restaurant-dining.jpg" alt="Sandra and Harmon - Dining together" /></figure>
-                <figure class="gallery-item"><img src="images/couple-autumn-bridge.jpg" alt="Sandra and Harmon - Autumn bridge" /></figure>
-                <figure class="gallery-item"><img src="images/sands.jpg" alt="Sandra and Harmon - Special moment" /></figure>
+                <figure class="gallery-item"><img src="images/couple-indoor-selfie.jpg" alt="Sandra and Harmon - Indoor selfie" loading="lazy" decoding="async" /></figure>
+                <figure class="gallery-item"><img src="images/couple-formal-portrait.jpg" alt="Sandra and Harmon - Formal portrait" loading="lazy" decoding="async" /></figure>
+                <figure class="gallery-item"><img src="images/couple-boat-selfie.jpg" alt="Sandra and Harmon - Boat adventure" loading="lazy" decoding="async" /></figure>
+                <figure class="gallery-item"><img src="images/couple-restaurant-dining.jpg" alt="Sandra and Harmon - Dining together" loading="lazy" decoding="async" /></figure>
+                <figure class="gallery-item"><img src="images/couple-autumn-bridge.jpg" alt="Sandra and Harmon - Autumn bridge" loading="lazy" decoding="async" /></figure>
+                <figure class="gallery-item"><img src="images/sands.jpg" alt="Sandra and Harmon - Special moment" loading="lazy" decoding="async" /></figure>
             </div>
         </div>
     </section>
@@ -263,12 +283,107 @@
         <div class="container">
             <h2 class="section-title">Frequently Asked Questions</h2>
             <div class="faq">
-                <button class="faq-item" aria-expanded="false"><span>What is the dress code?</span><span class="faq-icon">+</span></button>
-                <div class="faq-content" hidden>Semi-formal. Feel free to wear elegant neutrals to match our theme.</div>
-                <button class="faq-item" aria-expanded="false"><span>Can we bring kids?</span><span class="faq-icon">+</span></button>
-                <div class="faq-content" hidden>Yes, children are welcome. Please include them in your guest count.</div>
-                <button class="faq-item" aria-expanded="false"><span>Is there parking available?</span><span class="faq-icon">+</span></button>
-                <div class="faq-content" hidden>Yes, free parking is available at both venues.</div>
+                <button class="faq-item" aria-expanded="false"><span>Can We Take Photos or Videos During the Ceremony?</span><span class="faq-icon">+</span></button>
+                <div class="faq-content" hidden>
+                    <p>We believe that photos have the power to preserve love in its purest form— and for this reason, we've entrusted a team of professional photographers and videographers to beautifully capture our most cherished moments.</p>
+                    <p>📸 <strong>Yes, you may take photos during the procession, but kindly stay out of the way of our official photo & video team.</strong></p>
+                    <p>🙏🏼 <strong>We are having an unplugged ceremony.</strong><br>
+                    We lovingly ask that you put away your phones and cameras once the ceremony begins. Be fully present with us as we exchange vows, surrounded by grace and love. Let's allow our professionals to do what they do best— so you can simply soak in the moment with your hearts wide open. 💒</p>
+                    <p><strong>After the Ceremony</strong><br>
+                    Please don't head out just yet—we'd love to capture more memories with you!<br>
+                    Our coordinators will gently call guests by groups for a pictorial session right after the ceremony.</p>
+                    <p>We also have a Photoman who will be roaming and capturing candid moments and portraits of our beloved guests.<br>
+                    Smile, celebrate, and let love shine through the lens.</p>
+                    <p><strong>Help Us Capture the Joy!</strong><br>
+                    Once the ceremony is done, feel free to take as many photos as you wish.<br>
+                    📤 Share them with us using the QR code provided at the reception or tag them with our hashtags:<br>
+                    <strong>#GodsReMARKableGiftToMARIA</strong><br>
+                    <strong>#ALLANAIbaParaKayRENZO</strong></p>
+                </div>
+
+                <button class="faq-item" aria-expanded="false"><span>I already RSVP'd "YES" but something came up and I can no longer attend. What should I do?</span><span class="faq-icon">+</span></button>
+                <div class="faq-content" hidden>
+                    <p>We completely understand that plans can change.<br>
+                    Please inform us as soon as possible so we can kindly reallocate your seats.</p>
+                </div>
+
+                <button class="faq-item" aria-expanded="false"><span>I can attend the ceremony, but I won't be able to stay for the reception.</span><span class="faq-icon">+</span></button>
+                <div class="faq-content" hidden>
+                    <p>That's perfectly okay—just let us know ahead of time so we can adjust accordingly.</p>
+                </div>
+
+                <button class="faq-item" aria-expanded="false"><span>I previously said "no" on the RSVP, but now I'm available. Can I still attend?</span><span class="faq-icon">+</span></button>
+                <div class="faq-content" hidden>
+                    <p>We deeply appreciate your change of heart.<br>
+                    However, we have already finalized the seating and given your spot to another guest.<br>
+                    Thank you for understanding.</p>
+                </div>
+
+                <button class="faq-item" aria-expanded="false"><span>Can I bring someone with me?</span><span class="faq-icon">+</span></button>
+                <div class="faq-content" hidden>
+                    <p>As much as we would love to celebrate with everyone, we have a limited number of seats and can only accommodate those explicitly invited.<br>
+                    We kindly ask for your understanding.</p>
+                </div>
+
+                <button class="faq-item" aria-expanded="false"><span>Are kids allowed?</span><span class="faq-icon">+</span></button>
+                <div class="faq-content" hidden>
+                    <p>We adore children! 💕<br>
+                    However, only kids who are part of the entourage or from immediate families are included in the ceremony and reception.</p>
+                </div>
+
+                <button class="faq-item" aria-expanded="false"><span>Can We Sit Anywhere During the Reception?</span><span class="faq-icon">+</span></button>
+                <div class="faq-content" hidden>
+                    <p>To make sure everyone is comfortably accommodated, please check the seating chart at the registration table.<br>
+                    Our lovely coordinators will be happy to assist you in finding your designated seat.</p>
+                </div>
+
+                <button class="faq-item" aria-expanded="false"><span>Will There Be a Mobile Bar?</span><span class="faq-icon">+</span></button>
+                <div class="faq-content" hidden>
+                    <p>Absolutely! The drinks are on us, so raise a glass and celebrate!<br>
+                    We just ask that you drink responsibly and make it home safely.</p>
+                </div>
+
+                <button class="faq-item" aria-expanded="false"><span>How Can We Help the Couple Have Their Best Time?</span><span class="faq-icon">+</span></button>
+                <div class="faq-content" hidden>
+                    <p>🙏🏼 Pray with us for favor, joy, and grace throughout the day<br>
+                    📩 RSVP on time so we can plan joyfully and thoughtfully<br>
+                    👗 Wear attire that fits the occasion (no white, no dark tones)<br>
+                    ⏱ Arrive on time and allow space for meaningful moments<br>
+                    🎉 Celebrate with us until the end—every moment matters<br>
+                    💃 Relax, have fun, and party with the ones you love!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gift Section -->
+    <section id="gift" class="gift-section reveal" aria-label="Gift">
+        <div class="container">
+            <h2 class="section-title">Gift</h2>
+            <div class="gift-content">
+                <p class="gift-message">The greatest gift you can give us is your presence at our wedding, but if you must, provided below are options to help us fund our future together.</p>
+                
+                <div class="gift-options">
+                    <div class="bank-option">
+                        <h3 class="bank-name">BDO</h3>
+                        <p class="account-name">Sandra & Harmon</p>
+                        <p class="account-number">1234567890</p>
+                    </div>
+                    
+                    <div class="bank-option">
+                        <h3 class="bank-name">BPI</h3>
+                        <p class="account-name">Sandra & Harmon</p>
+                        <p class="account-number">9876543210</p>
+                    </div>
+                    
+                    <div class="bank-option">
+                        <h3 class="bank-name">GCash</h3>
+                        <p class="account-name">Sandra & Harmon</p>
+                        <p class="account-number">09123456789</p>
+                    </div>
+                </div>
+                
+                <p class="gift-note">💝 Your presence is the greatest gift, but monetary contributions to help us start our new journey together will be greatly valued.</p>
             </div>
         </div>
     </section>
@@ -284,11 +399,23 @@
         <img src="" alt="Gallery preview" class="lightbox-img" />
     </div>
     <button class="back-to-top" aria-label="Back to top">↑</button>
+    <!-- RSVP Success Modal -->
+    <div class="modal" id="rsvp-modal" aria-hidden="true" role="dialog" aria-labelledby="rsvp-modal-title">
+        <div class="modal-dialog">
+            <h3 class="modal-title" id="rsvp-modal-title">RSVP Submitted 🎉</h3>
+            <p class="modal-body">Thank you! Your response has been recorded. We can’t wait to celebrate with you.</p>
+            <button class="btn modal-close" id="rsvp-modal-close" aria-label="Close modal">Close</button>
+        </div>
+    </div>
+    <div class="sticky-rsvp"><a href="#rsvp" class="btn">RSVP</a></div>
     
     <!-- Music Toggle -->
     <audio id="bg-audio" loop preload="none">
-        <!-- Replace the src below with your preferred MP3 in an `audio/` folder -->
+        <!-- Multiple audio sources for better browser compatibility -->
         <source src="audio/wedding-theme.mp3" type="audio/mpeg">
+        <source src="audio/cant help falling.mp3" type="audio/mpeg">
+        <!-- Fallback message for browsers that don't support audio -->
+        Your browser does not support the audio element.
     </audio>
     <button class="music-toggle" id="music-toggle" aria-label="Toggle music" aria-pressed="false">♪</button>
 
@@ -312,6 +439,22 @@
         document.querySelectorAll('section').forEach(sec => {
             sec.style.scrollMarginTop = navHeight + 'px';
         });
+
+        // Active nav highlight on scroll
+        const navMap = Array.from(document.querySelectorAll('.nav-link'))
+            .map(link => ({ link, target: document.querySelector(link.getAttribute('href')) }))
+            .filter(x => x.target);
+        const activeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const item = navMap.find(x => x.target === entry.target);
+                if (!item) return;
+                if (entry.isIntersecting) {
+                    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                    item.link.classList.add('active');
+                }
+            });
+        }, { rootMargin: '-40% 0px -55% 0px', threshold: 0.01 });
+        navMap.forEach(x => activeObserver.observe(x.target));
 
         // Animated navbar on scroll + subtle parallax
         const navbar = document.querySelector('.navbar');
@@ -399,20 +542,96 @@
             }
         });
 
-        // Google Forms submission handling
-        document.getElementById('rsvp-form').addEventListener('submit', function(e) {
+        // Google Forms submission handling without redirect
+        const rsvpForm = document.getElementById('rsvp-form');
+        const hiddenIframe = document.getElementById('hidden_iframe');
+        const showError = (id, message) => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            el.textContent = message;
+            el.hidden = false;
+        };
+        const hideError = (id) => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            el.hidden = true;
+        };
+        rsvpForm.addEventListener('submit', function(e) {
+            // Client-side validation
+            let valid = true;
+            const email = document.getElementById('email');
+            const guests = document.getElementById('guests');
+            const name = document.getElementById('name');
+            const honeypot = document.getElementById('confirm_email');
+            hideError('error-email');
+            hideError('error-guests');
+            hideError('error-name');
+            email.setAttribute('aria-invalid', 'false');
+            guests.setAttribute('aria-invalid', 'false');
+            name.setAttribute('aria-invalid', 'false');
+            // Honeypot check
+            if (honeypot && honeypot.value) {
+                e.preventDefault();
+                return; // Bot submission
+            }
+            // Name validation: first and last (at least two words)
+            if (!name.value || name.value.trim().split(/\s+/).length < 2) {
+                showError('error-name', 'Please enter your first and last name.');
+                name.setAttribute('aria-invalid', 'true');
+                valid = false;
+            }
+            if (!email.value || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+                showError('error-email', 'Please enter a valid email address.');
+                email.setAttribute('aria-invalid', 'true');
+                valid = false;
+            }
+            if (!guests.value) {
+                showError('error-guests', 'Please select the number of guests.');
+                guests.setAttribute('aria-invalid', 'true');
+                valid = false;
+            }
+            if (!valid) {
+                e.preventDefault();
+                return;
+            }
             const btn = this.querySelector('.submit-btn');
             const btnText = this.querySelector('.btn-text');
             const btnEmoji = this.querySelector('.btn-emoji');
             const attendance = this.querySelector('input[name="entry.1485655847"]:checked');
+            
+            // Debug: Log form data to console
+            console.log('Form submission data:');
+            const formData = new FormData(this);
+            for (let [key, value] of formData.entries()) {
+                console.log(`${key}: ${value}`);
+            }
             
             // Show loading state
             btn.disabled = true;
             btnText.textContent = 'Submitting...';
             btnEmoji.textContent = '📤';
             
-            // Show success message immediately (form will redirect to Google)
-            setTimeout(() => {
+            // Listen for iframe load event to show success state
+            // Save form data locally for prefill next time
+            try {
+                const snapshot = Object.fromEntries(new FormData(rsvpForm).entries());
+                localStorage.setItem('rsvp_snapshot', JSON.stringify(snapshot));
+            } catch (_) {}
+
+            // Timeout fallback in case Google doesn't return quickly
+            const timeoutId = setTimeout(() => {
+                btn.disabled = false;
+                btnText.textContent = 'Try Again';
+                btnEmoji.textContent = '⚠️';
+                const err = document.querySelector('.form-error');
+                if (err) {
+                    err.hidden = false;
+                    err.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }, 6000);
+
+            const onDone = () => {
+                clearTimeout(timeoutId);
                 btn.style.background = '#4CAF50';
                 btn.style.borderColor = '#4CAF50';
                 btnText.textContent = 'Thank you!';
@@ -432,8 +651,72 @@
                 
                 success.hidden = false;
                 success.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }, 500);
+                // Show modal
+                const modal = document.getElementById('rsvp-modal');
+                const closeBtn = document.getElementById('rsvp-modal-close');
+                modal.classList.add('open');
+                modal.setAttribute('aria-hidden', 'false');
+                const closeModal = () => {
+                    modal.classList.remove('open');
+                    modal.setAttribute('aria-hidden', 'true');
+                    modal.removeEventListener('click', backdropHandler);
+                    closeBtn.removeEventListener('click', closeModal);
+                };
+                const backdropHandler = (evt) => { if (evt.target === modal) closeModal(); };
+                closeBtn.addEventListener('click', closeModal);
+                modal.addEventListener('click', backdropHandler);
+                hiddenIframe.removeEventListener('load', onDone);
+            };
+            hiddenIframe.addEventListener('load', onDone);
         });
+
+        // Prefill from localStorage if available
+        try {
+            const saved = localStorage.getItem('rsvp_snapshot');
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data['entry.671845706']) document.getElementById('name').value = data['entry.671845706'];
+                if (data['entry.123456789']) document.getElementById('email').value = data['entry.123456789'];
+                if (data['entry.1893890701']) document.getElementById('guests').value = data['entry.1893890701'];
+            }
+        } catch (_) {}
+
+        // Modal a11y: Escape to close, focus trap
+        (function(){
+            const modal = document.getElementById('rsvp-modal');
+            const closeBtn = document.getElementById('rsvp-modal-close');
+            if (!modal || !closeBtn) return;
+            const focusableSel = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+            const trap = (e) => {
+                if (modal.getAttribute('aria-hidden') === 'true') return;
+                if (e.key === 'Escape') {
+                    closeBtn.click();
+                    return;
+                }
+                if (e.key !== 'Tab') return;
+                const focusables = modal.querySelectorAll(focusableSel);
+                if (!focusables.length) return;
+                const first = focusables[0];
+                const last = focusables[focusables.length - 1];
+                if (e.shiftKey && document.activeElement === first) {
+                    e.preventDefault(); last.focus();
+                } else if (!e.shiftKey && document.activeElement === last) {
+                    e.preventDefault(); first.focus();
+                }
+            };
+            document.addEventListener('keydown', trap);
+        })();
+
+        // Optional Apps Script webhook (set your URL to enable)
+        const APPS_SCRIPT_WEBHOOK_URL = '';
+        if (APPS_SCRIPT_WEBHOOK_URL) {
+            rsvpForm.addEventListener('submit', () => {
+                try {
+                    const payload = Object.fromEntries(new FormData(rsvpForm).entries());
+                    navigator.sendBeacon(APPS_SCRIPT_WEBHOOK_URL, JSON.stringify(payload));
+                } catch (_) {}
+            });
+        }
 
         // Add visual feedback when radio options are selected
         document.querySelectorAll('input[name="entry.1485655847"]').forEach(radio => {
@@ -526,6 +809,7 @@
             const toggle = document.getElementById('music-toggle');
             if (!audio || !toggle) return;
             let isPlaying = false;
+            let userInteracted = false;
 
             function setState(playing) {
                 isPlaying = playing;
@@ -534,26 +818,62 @@
                 toggle.textContent = playing ? '❚❚' : '♪';
             }
 
+            // Handle audio loading
+            audio.addEventListener('loadeddata', () => {
+                console.log('Audio loaded successfully');
+            });
+
+            audio.addEventListener('error', (e) => {
+                console.error('Audio loading error:', e);
+                toggle.textContent = '🔇';
+                toggle.title = 'Audio file not found';
+            });
+
+            // Handle audio end (for non-looping scenarios)
+            audio.addEventListener('ended', () => {
+                if (isPlaying) {
+                    setState(false);
+                }
+            });
+
             toggle.addEventListener('click', async () => {
                 try {
                     if (!isPlaying) {
+                        // Set volume to a reasonable level (50%)
+                        audio.volume = 0.5;
                         await audio.play();
                         setState(true);
+                        userInteracted = true;
                     } else {
                         audio.pause();
                         setState(false);
                     }
                 } catch (err) {
-                    console.warn('Audio playback failed (likely missing file or browser policy).');
-                    alert('Tap again to allow audio, or add an audio file at audio/wedding-theme.mp3');
+                    console.warn('Audio playback failed:', err);
+                    if (!userInteracted) {
+                        // First interaction - show helpful message
+                        alert('Click the music button to enable audio playback. Some browsers require user interaction before playing audio.');
+                        userInteracted = true;
+                    } else {
+                        // Subsequent failures - show error
+                        toggle.textContent = '🔇';
+                        toggle.title = 'Audio playback failed';
+                    }
                 }
             });
 
-            // Some browsers block autoplay; show button but do not auto-play
+            // Pause audio when page becomes hidden
             document.addEventListener('visibilitychange', () => {
                 if (document.hidden && isPlaying) {
                     audio.pause();
                     setState(false);
+                }
+            });
+
+            // Handle page unload
+            window.addEventListener('beforeunload', () => {
+                if (isPlaying) {
+                    audio.pause();
                 }
             });
         })();
