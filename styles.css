@@ -930,6 +930,12 @@ section {
 .music-toggle.active { background: #000; color: #fff; }
 .music-toggle:hover { transform: translateY(-2px); }
 
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
 /* Sticky RSVP Button */
 .sticky-rsvp { position: fixed; right: 20px; bottom: 80px; z-index: 1600; }
 .sticky-rsvp .btn { width: auto; margin-top: 0; padding: 0.9rem 1.4rem; }
